@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Product</title>
+</head>
+<body>
+    <h3><%= product.name %> </h3>
+    <ul>
+        <li>Price: $<%= product.price %> </li>
+        <li>Category: <a href="/products?category=<%= product.category %>"><%= product.category %></a> </li>
+        <li>Farm: <a href='/farms/<%= product.farm._id %>'><%= product.farm.name %> </a></li>
+    </ul>
+    <br>
+    <a href="/products/<%=product._id%>/edit"><button>Edit</button></a>
+    <form style="display:inline;" action="/products/<%= product._id %>?_method=DELETE" method="POST">
+        <button>Delete</button>
+    </form>
+    <br><hr>
+    <a href="/products"><button>All Products</button></a>
+</body>
+</html>
